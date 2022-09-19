@@ -1,8 +1,8 @@
 name: web3-capture-cronjob
 on:
   schedule:
-    # Runs "after every six hours" (see https://crontab.guru)
-    - cron: "0 */6 * * *"
+    # Runs "everyday at 00:00 am" (see https://crontab.guru)
+    - cron: "0 0 * * *"
 jobs:
   capture:
     name: web3-capture-cronjob
