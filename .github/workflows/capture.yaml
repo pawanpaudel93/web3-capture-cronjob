@@ -1,5 +1,8 @@
 name: web3-capture-cronjob
-on: [push]
+on:
+  schedule:
+    # Runs "every 10th minutes" (see https://crontab.guru)
+    - cron: "*/10 * * * *"
 jobs:
   capture:
     name: web3-capture-cronjob
@@ -25,3 +28,4 @@ jobs:
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Saving captured webpage information
+          file_pattern: "*.json"
